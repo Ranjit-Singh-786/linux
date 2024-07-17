@@ -1,0 +1,188 @@
+1. command to install local packages
+sudo dpkg -i app_file_name   <-- make sure you are at that position on which this app file is available
+
+2.To install git
+sudo apt install git        <--- To install packages in linux
+sudo apt-get remove wps-office    <--- To uninstall packages from linux
+ssh -i pathOfKey ubuntu@publicIP   <-- To connect ec2 machine on local terminal
+
+
+
+
+### LINUX COMMANDS AND DEPLOYMENTS STEPS USING AWS
+
+
+#usefull linux commands
+sudo apt-get update && sudo apt-get install python3-pip        <-- update with installation of PIP
+sudo apt install docker.io    <--- to install docker
+sudo -i     <---- to switch into root user
+screen -R deploy python3 application.py        <--- to hold the execution
+sudo apt install python3-pip        <---- To install pip
+
+
+
+###  to deploy a html webiste 
+1. Launch EC2 instance.
+2. access EC2 instance by terminal
+3. sudo apt install apache2    <--- to install apache server
+4. sudo vim /var/www/html/index.html    <--- write your html code inside this file.
+4. or you can go inside   cd /var/www/html     <--- inside this  directory, where you can copy your html file.
+5. Dont need to find Deploy URL to , just paste the public ip of your ec2. to access your website.
+
+6. By default there is index.html, so access this file you don,t need to define anything else other IP.
+   If you have write down your dataset inside the another file, then your will have to define access url 
+   LIKE THIS --->> IP:FILE_NAME_with_extension   eg. --->  http://16.171.25.28/my_web.html
+
+
+localhost :- "0.0.0.0" , "localhost"   , "127.0.0.1"
+
+
+
+
+# Deploy on EC2 instance
+ssh-keygen   <-- to generate ssh key in ec2 instance
+cd .ssh       <--- Go inside the hidden ssh folder
+cat ***.pub    <--- public key and copy from instance
+add ssh key on github
+clone the github code on ec2 using >> git clone paste_url
+pip install -r requirements.txt     <--- to install requirements
+if pip is not available -->>use this ( sudo apt install python3-pip )  or (sudo apt-get update && sudo apt-get install python3-pip)
+then execute python3 app.py              
+screen -R deploy python3 application.py        <--- to hold the execution
+MAKE SURE ALL TRAFFIC ALLOW ON INSTANCE.
+
+
+
+### command and steps to deploy using docker
+
+sudo apt install docker.io      <--- to install docker
+Dockerfile creating and writing instruction   <-- you can copy Dockerfile code from dockerhub.
+docker build -t imagname .
+docker run -d -p 1122:8080 imagname       <--  command
+paste the host:port on chrome to access the application
+
+
+
+## To install mysql on EC2 with ubuntu
+sudo apt install mysql-server      <---- To install 
+sudo mysql    <--- Start the mysql terminal
+sudo  mysql -h HOST_NAME -u admin -P 3306 -p           <-- To start with configuration 
+
+
+###  Deployment using cicd pipeline
+
+1. launch EBS with python platform enviroment.
+2. configure the codepipeline with EBS and Github.
+3. Set the .ebextensions/pytohn.config
+4. Deploy your file.
+
+
+### Deployment Directly through EC2
+
+1. launch EC2 instance
+2. generate ssh-keygen key
+3. set inside the github
+4. clone the github code on ec2 instance.
+5. install python requirements.txt   <-- pip install -r requirements.txt
+6. Run the pytho file,
+
+
+
+#### 	COMMON LINUX COMMANDS 
+gedit main.py   <-- to open file in text editor, but make sure you are in working dir of file.
+sudo apt-get update
+sudo apt-get upgrade
+sudo apt install snail
+
+sudo apt install vim
+to install the software in linux with root previlleges. if you working as  a regular users,.
+
+apt install vim
+If you in sudo su
+
+It uses to switch in sudo user.
+$ -> regular user
+# -> sudo user
+sudo su
+sudo -i          <-- tot switch in root user
+
+
+man 
+Sytex :-  man ls
+It will open like help desk for ls command
+
+pwd 
+ls
+ls -R
+ls -a
+ls -lart
+cat filename
+mv filenamewithpath movepath,
+mv fold1/fold2/main.py fold1/        <-- To move a single file
+mv fold1/fold2/* fold1/              <-- To move all the files
+mv -r fold1/fold2/fold3 fold1/       <-- To move fold3 into fold1
+ls | wc -l                           <-- file count in directory
+
+# Same for copy  " cp " commands
+cp filepathwithfilename  movepathbinafilename
+
+cd \   go in root directory
+mkdir
+touch filename
+rm filename
+rmdir dirname
+rm -r dirname
+rm -rf dirname   --> delete directorry with file
+head
+tail
+mv "/c/Users/Ranjit Singh/Desktop/a/raj.txt" "/c/Users/Ranjit Singh/Desktop/b/"
+To move the file, if  your path contain space, then keep your path in quates.
+
+cp "/c/Users/Ranjit Singh/Desktop/a/raj.txt" "/c/Users/Ranjit Singh/Desktop/b/"
+To copy the file, if  your path contain space, then keep your path in quates.
+
+
+grep pattern.txt   "to filter file by pattern
+
+
+ls -l     
+
+it list downfilename with permission
+
+
+
+
+chmod "code" filename    
+
+ it uses to change the permission of file "RWE" for user or owner , group , other or public 
+ And to check the code visit chmod calculator website.
+
+
+ps -a
+To listdown all current running file name
+
+top or htop
+ List down top High processing which are currently running in system.
+
+Kill "PSID"
+When you run top command, you will get top processing details. If you want to stop any one of them process. You can directly copy PSID from where, and execute kill command.
+
+Vim editor
+
+vim filename
+To open file in vim editor
+
+Escape -> i
+To go in insert mode
+After writing content.
+
+Escape -> :wq ->  enter
+exit from vim editor with save the file content.
+
+Escape -> :q! -> enter
+Exit from vim editor without save the file.
+
+wget paste_file_url    <---- To download the file from internet
+
+
+
